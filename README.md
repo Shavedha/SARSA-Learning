@@ -21,7 +21,20 @@ Otherwise: 0
 33.33% - Agent stays in the same state
 16.66% - Agent movies in orthogonal direction
 ## SARSA LEARNING ALGORITHM
-Include the steps involved in the SARSA Learning algorithm
+1. Initialize the Q-values arbitrarily for all state-action pairs.
+2. Repeat for each episode:  
+   i. Initialize the starting state.  
+   ii. Repeat for each step of episode:
+   ```
+      a. Choose action from state using policy derived from Q (e.g., epsilon-greedy).
+      b. Take action, observe reward and next state.
+      c. Choose action from next state using policy derived from Q (e.g., epsilon-greedy).
+      d. Update Q(s, a) := Q(s, a) + alpha * [R + gamma * Q(s', a') - Q(s, a)]
+      e. Update the state and action.
+   ```
+   iii. Until state is terminal.
+
+4. Until performance converges.
 
 ## SARSA LEARNING FUNCTION
 ```python
@@ -81,4 +94,4 @@ def sarsa(env,
 
 ## RESULT:
 
-Write your result here
+Thus, SARSA learning algorithm is implemented successfully.
